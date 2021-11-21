@@ -42,7 +42,7 @@ auto gas = Value<uint8_t>(lcd, "Gaz:", {8, 0}, 4, "%");
 auto hum = Value<uint8_t>(lcd, "Hum:", {0, 0}, 3, "%");
 auto temp = Value<float>(lcd, "Temp:", {0, 1}, 11, "C", true);
 
-/*  */
+/* We have to let sensors activate at their own pace, otherwise they won't give reliable data */
 const unsigned long SENSOR_ACTIVATION_DELAY = 200;
 
 void setup()
