@@ -50,6 +50,7 @@ public:
 		// Writing new data
 		m_lcd.print(value);
 			if(m_degree)
+        
 		m_lcd.write(DEGREE_CHAR);
 		m_lcd.print(m_suffix);
 	}
