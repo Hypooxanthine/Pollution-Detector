@@ -3,7 +3,7 @@
 #include "ValueManager.hpp"
 
 /* Debug/Release mode defines */
-#define __DEBUG // Remove this to use release mode : debug logging will be disabled on serial port. Serial port uses 608 bytes (~2%) from storage space and 194 bytes (~10%) from RAM.
+//#define __DEBUG // Remove this to use release mode : debug logging will be disabled on serial port. Serial port uses 608 bytes (~2%) from storage space and 194 bytes (~10%) from RAM.
 #ifdef __DEBUG
   #define LOG_INIT(x) Serial.begin(x)
   #define LOG(x) Serial.print(x)

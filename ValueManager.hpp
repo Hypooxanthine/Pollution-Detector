@@ -22,7 +22,7 @@ struct Position{ uint8_t x, y; };
 template <typename T>
 class Value
 {
-	
+
 public:
   Value(LiquidCrystal& lcd, const char* label, const Position& labelPos, const uint8_t& valueSize, const char* suffix = "", const bool& degree = false, const float& initValue = T(0))
     : m_lcd(lcd), m_label(label), m_labelPos(labelPos), m_valuePos({labelPos.x + strlen(label), labelPos.y}), m_valueSize(valueSize), m_suffix(suffix), m_degree(degree), value(initValue)
@@ -41,7 +41,7 @@ public:
     // Clearing the box
     char* clearMask = (char*)malloc(sizeof(char) * (m_valueSize + 1));
     memset(clearMask, ' ', sizeof(char) * m_valueSize);
-    clearMask[m_valueSize] = 0; // String-end identificator
+    clearMask[m_valueSize] = 0; // String-end identificator, 0 = '\0'
     m_lcd.print(clearMask);
     free(clearMask);
 
@@ -71,7 +71,7 @@ private:
   const Position m_labelPos;
   const Position m_valuePos;
   const uint8_t m_valueSize;
-  const char* m_suffix = "";
+  const char* m_suffix;
   const bool m_degree;
 
 public:
