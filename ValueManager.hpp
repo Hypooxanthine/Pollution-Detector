@@ -41,7 +41,7 @@ public:
     // Clearing the box
     char* clearMask = (char*)malloc(sizeof(char) * (m_valueSize + 1));
     memset(clearMask, ' ', sizeof(char) * m_valueSize);
-    clearMask[m_valueSize] = 0; // String-end identificator, 0 = '\0'
+    clearMask[m_valueSize] = 0; // String terminator, 0 = '\0'
     m_lcd.print(clearMask);
     free(clearMask);
 
